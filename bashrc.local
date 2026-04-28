@@ -1,5 +1,7 @@
-# Set up git-prompt
+# Extend PATH
+export PATH=${PATH}:${HOME}/.local/bin
 
+# Set up git-prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 if [ "$color_prompt" = yes ]; then
@@ -8,3 +10,5 @@ else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1) \$ '
 fi
 unset color_prompt force_color_prompt
+
+eval "$(direnv hook bash)"
